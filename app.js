@@ -5,6 +5,7 @@ const app = express()
 
 app.use(express.json())
 
+const starRoute = require('./src/routes/starRoute');
 const dbConnect = require('./src/config/dbConnection');
 
 const port = process.env.APP_PORT
@@ -16,11 +17,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.set('view engine', 'ejs')
 
+app.use('/', starRoute);
+
 dbConnect().then()
 .catch(e => console.log(e))
 
 app.use(express.static(path.join(__dirname, '/public')))
 
-app.listen(port, () => {
+app.listen(port, () => { 
   console.log(`Server started  successfully ${port}`)
 })
