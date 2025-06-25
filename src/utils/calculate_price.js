@@ -40,7 +40,7 @@ const calculatePrice = (stars, tonPrice) => {
     totalUSD,
     totalTON,
     profitUSD,
-    profitTON
+    profitTON 
   };
 };
 
