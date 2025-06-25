@@ -8,7 +8,7 @@ app.use(express.json())
 const starRoute = require('./src/routes/starRoute');
 const dbConnect = require('./src/config/dbConnection');
 
-const port = process.env.APP_PORT
+const port = process.env.APP_PORT || 6100
 
 app.use(express.json()); // for application/json 
 app.use(express.urlencoded({ extended: true })); 
