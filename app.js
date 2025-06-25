@@ -19,6 +19,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', starRoute);
 
+app.get('/', (req, res) => {
+  res.send('✅ Starflux backend is up and running!');
+});
+
+
 dbConnect().then()
 .catch(e => console.log(e))
 
