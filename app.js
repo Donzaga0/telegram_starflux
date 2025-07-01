@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.set('view engine', 'ejs')
 
-app.use('/', starRoute);
+app.use('/star', starRoute);
 
 app.get('/', (req, res) => {
   res.send('✅ Starflux backend is up and running!');
