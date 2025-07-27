@@ -6,6 +6,7 @@ const app = express()
 app.use(express.json())
 
 const starRoute = require('./src/routes/starRoute');
+const tonRoute = require('./src/routes/tonRoute');
 const dbConnect = require('./src/config/dbConnection');
 
 const port = process.env.APP_PORT || 6100
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.set('view engine', 'ejs')
 
 app.use('/star', starRoute);
+app.use('/ton', tonRoute);
 
 app.get('/', (req, res) => {
   res.send('✅ Starflux backend is up and running!');
